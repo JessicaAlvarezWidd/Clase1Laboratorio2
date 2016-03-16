@@ -19,7 +19,15 @@ namespace UsoDeTryparse
 
             int numero;
 
-            numero = int.Parse(dato);
+            //numero = int.Parse(dato);
+
+            while (int.TryParse(dato, out numero) == false)
+            {
+                Console.WriteLine("Error, reintente reingresando un numero");
+
+                dato = Console.ReadLine();
+
+            }
         }
     }
 }
